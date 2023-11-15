@@ -1,0 +1,25 @@
+<%- include partials/header.ejs %>
+<body class="w-screen flex items-center flex-col bg-gray-100">
+    <%- include partials/navbar.ejs %>
+    <div class="flex flex-col items-start w-9/12 bg-white flex ">
+        <div class="flex flex-col w-full">
+            <div class="p-6">
+                <h2 class="text-3xl font-bold underline">Tópicos</h2>
+            </div>
+            <hr>
+            <% perguntas.forEach(pergunta => { %>
+                <br>
+                <div class="p-6 w-full flex justify-between items-center border">
+                    <div class="">
+                        <h3><%= pergunta.titulo %></h3>
+                    </div>
+                    <div >
+                        <a href="/pergunta/<%= pergunta.id %>"</a><button class="bg-blue-500 p-3.5 text-white rounded-lg">Responder</button></a>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+</body>
+<%- include partials/footer.ejs %>
